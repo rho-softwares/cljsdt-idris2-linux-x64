@@ -1,0 +1,1 @@
+(parameterize ([optimize-level 3] [compile-file-message #f]) (compile-program "/tmp/claude-1001/-home-dev-Desktop-my-repl/d78a7f3f-2f57-4b38-b370-c92f1df866ed/scratchpad/bin/idris-src/build/exec/idris2_app/idris2.ss"))

@@ -1,0 +1,11 @@
+#!/bin/sh
+# cljsdt's Idris 2 0.8.0 on Chez Scheme, relocatable: everything relative to this file.
+set -e
+DIR=$(dirname "$(readlink -f -- "$0")")
+APP="$DIR/idris/bin/idris2_app"
+export SCHEMEHEAPDIRS="$(echo "$DIR"/chez/lib/csv*/ta6le)"
+export LD_LIBRARY_PATH="$APP:$LD_LIBRARY_PATH"
+export IDRIS2_INC_SRC="$APP"
+export IDRIS2_PREFIX="$DIR/idris"
+export CHEZ="$DIR/chez/bin/scheme"
+exec "$DIR/chez/bin/scheme" --program "$APP/idris2.so" "$@"
